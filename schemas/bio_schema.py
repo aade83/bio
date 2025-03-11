@@ -2,7 +2,13 @@ from pydantic import BaseModel
 from typing import List
 
 class BioRequest(BaseModel):
-    about_me: str
+    text: str
+
+class BioData(BaseModel):
+    id: int
+    content: str
 
 class BioResponse(BaseModel):
-    bios: List[str]
+    status: str
+    message: str
+    data: List[BioData]# Updated script
